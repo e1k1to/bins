@@ -1,0 +1,5 @@
+#!/bin/bash
+num1="$(cat /sys/class/power_supply/BAT0/energy_now)"
+num2="$(cat /sys/class/power_supply/BAT0/energy_full)"
+
+echo $(echo "scale=2; 100*$num1/$num2" | bc -l )%
